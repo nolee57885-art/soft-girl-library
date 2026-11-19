@@ -150,12 +150,62 @@ button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-vis
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}
 }
 
+
+/* Personal cottage nook: ornaments, reading moods and Clover the companion */
+.cottage-customizer{margin:22px 0;padding:20px;border:1px solid #ead7d8;border-radius:25px;background:linear-gradient(135deg,#fffaf4f4,#f7edf0f2),url("assets/5.jpg") center/cover;box-shadow:var(--shadow)}
+.cottage-intro{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:14px}
+.cottage-intro h2{margin:3px 0;color:#98627a}.cottage-intro p{margin:0;color:var(--muted);font-size:13px}
+.nook-window{width:55px;height:55px;display:grid;place-items:center;border-radius:50% 50% 18px 18px;background:linear-gradient(145deg,#f7e2e8,#e5eddb);font-size:27px;box-shadow:inset 0 0 0 5px #fff9}
+.cottage-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:12px}
+.cottage-card{padding:15px;border:1px solid #ecdcda;border-radius:18px;background:#fffaf5d9}
+.cottage-card h3{margin:0 0 3px;color:#91627a}.cottage-card>p{margin:0 0 12px}
+.ornament-options{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:7px}
+.ornament{min-width:0;padding:8px 3px;border:1px solid #eedde0;border-radius:13px;background:#fffdf9;color:#775b70;display:flex;flex-direction:column;align-items:center;gap:3px;transition:transform .16s,border-color .16s,background .16s}
+.ornament span{font-size:22px}.ornament small{font-size:10px;color:#927d88}
+.ornament[aria-pressed="true"]{background:#f5e3e8;border-color:#d9a9bb;box-shadow:inset 0 0 0 1px #fff}
+.ornament:hover{transform:translateY(-2px)}
+.decorated-shelf{min-height:47px;margin-top:10px;padding:8px 12px;border-radius:12px;background:linear-gradient(180deg,#f8f1e9,#e9ddce);border-bottom:5px solid #bd9875;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.decorated-shelf .shelf-treasure{font-size:24px;filter:drop-shadow(0 2px 2px #8b755033)}
+.mood-select{width:100%;margin:2px 0 10px}
+.mood-note{padding:12px;border-radius:13px;background:#f0f3e9;color:#718269;font:italic 14px Georgia,serif;min-height:66px;display:flex;align-items:center}
+.buddy-card{margin-top:12px;display:flex;align-items:center;gap:13px;background:linear-gradient(110deg,#fff8f2,#f1f4e9)}
+.buddy-avatar{width:58px;height:58px;flex:0 0 58px;display:grid;place-items:center;border-radius:19px;background:#f5e4e8;font-size:31px}
+.buddy-copy{flex:1;min-width:0}.buddy-copy h3{font-size:19px;margin:1px 0}.buddy-copy p{margin:2px 0 0;color:#87727e;font:italic 14px Georgia,serif}
+.buddy-button{white-space:nowrap}
+@media(max-width:680px){.cottage-grid{grid-template-columns:1fr}.ornament-options{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:440px){.cottage-customizer{padding:13px}.buddy-card{align-items:flex-start;flex-wrap:wrap}.buddy-button{margin-left:71px}.cottage-intro h2{font-size:22px}}
+
 </style></head><body><main class="shell">
 <header class="top"><div class="brand"><div class="logo">📖</div><div><h1>soft girl library ♡</h1><div class="sub">your own little reading nook</div></div></div><div class="actions"><button class="btn" id="backup">↗ Backup</button><button class="btn" id="restore">↙ Restore</button><input id="restoreFile" type="file" accept="application/json,.json" hidden><button class="btn primary" id="add">＋ Add a book</button></div></header>
 <section class="hero"><div><div class="sub">✿ step inside · stay awhile</div><h2>Welcome to your little storybook world.</h2><p>Wander through your shelves, find a favourite corner, and let every chapter bloom.</p><div class="hero-note">a cosy place for all the stories you love ♡</div></div><div class="art">🌸📚🪴</div></section>
 <section class="explore"><div class="explore-heading"><div><div class="sub">choose a little corner</div><h2>Explore the library ✧</h2></div><span class="explore-note">every room has a story</span></div><nav class="nav room-grid" id="nav"><button class="tab room active" data-tab="all"><span class="room-icon">📚</span><span class="room-copy"><b>The grand bookshelves</b><small>your whole collection</small></span><span class="room-arrow">↗</span></button><button class="tab room" data-tab="reading"><span class="room-icon">🌷</span><span class="room-copy"><b>Reading nook</b><small>stories in progress</small></span><span class="room-arrow">↗</span></button><button class="tab room" data-tab="want"><span class="room-icon">🧺</span><span class="room-copy"><b>Bookshop corner</b><small>your TBR wishlist</small></span><span class="room-arrow">↗</span></button><button class="tab room" data-tab="finished"><span class="room-icon">🏵️</span><span class="room-copy"><b>Memory shelves</b><small>stories you finished</small></span><span class="room-arrow">↗</span></button><button class="tab room" data-tab="favorites"><span class="room-icon">💗</span><span class="room-copy"><b>Favourite treasures</b><small>books close to your heart</small></span><span class="room-arrow">↗</span></button><button class="tab room" data-tab="quotes"><span class="room-icon">💌</span><span class="room-copy"><b>Secret garden notes</b><small>words to keep</small></span><span class="room-arrow">↗</span></button><button class="tab room" data-tab="journal"><span class="room-icon">📔</span><span class="room-copy"><b>Diary desk</b><small>your reading journal</small></span><span class="room-arrow">↗</span></button></nav></section>
 <section class="reading-wall"><div class="head"><h2>Currently on the reading shelf ✧</h2><span class="pill">tap a spine to edit</span></div><p class="wall-sub">Your in-progress stories, lined up like treasures</p><div id="readingSpines"></div><div class="wall-actions"><button class="btn" id="wallAdd">＋ Add a book</button></div></section><section class="stats"><div class="stat"><small>Books on your shelf</small><strong id="total">0</strong></div><div class="stat"><small>Finished reads</small><strong id="finished">0</strong></div><div class="stat"><small>Pages read</small><strong id="pages">0</strong></div><div class="stat"><small>Favourite quotes</small><strong id="quoteCount">0</strong></div></section>
 <section class="panel"><div class="head"><h2>My reading goal ✨</h2><span class="muted" id="goalText">0 / 12 books</span></div><div class="progress"><span id="goalBar" style="width:0%"></span></div><label class="muted">Yearly goal <input class="field" id="goal" type="number" min="1" max="500" value="12" style="width:85px"> books</label></section>
+<section class="cottage-customizer" aria-labelledby="cottageTitle">
+  <div class="cottage-intro"><div><div class="sub">make yourself at home</div><h2 id="cottageTitle">Your little cottage nook ♡</h2><p>Choose the details that make this corner feel like yours.</p></div><div class="nook-window" aria-hidden="true">🌷</div></div>
+  <div class="cottage-grid">
+    <div class="cottage-card decor-card"><h3>✿ Decorate your bookshelf</h3><p class="muted">Tap a little treasure to add or remove it.</p>
+      <div class="ornament-options">
+        <button class="ornament" type="button" data-ornament="🌿" aria-pressed="false"><span>🌿</span><small>Fern</small></button>
+        <button class="ornament" type="button" data-ornament="🎀" aria-pressed="false"><span>🎀</span><small>Bow</small></button>
+        <button class="ornament" type="button" data-ornament="🕯️" aria-pressed="false"><span>🕯️</span><small>Candle</small></button>
+        <button class="ornament" type="button" data-ornament="🐈" aria-pressed="false"><span>🐈</span><small>Kitten</small></button>
+        <button class="ornament" type="button" data-ornament="🌼" aria-pressed="false"><span>🌼</span><small>Daisies</small></button>
+        <button class="ornament" type="button" data-ornament="🍄" aria-pressed="false"><span>🍄</span><small>Toadstool</small></button>
+      </div>
+      <div class="decorated-shelf" id="decoratedShelf" aria-live="polite"><span class="muted">Your little decorations will appear here.</span></div>
+    </div>
+    <div class="cottage-card mood-card"><h3>☁️ What's your reading mood?</h3><p class="muted">Set the atmosphere for today's chapter.</p>
+      <select class="field mood-select" id="readingMood" aria-label="Reading mood"><option value="Cozy & comfort">☕ Cozy & comfort</option><option value="Romantic daydream">💗 Romantic daydream</option><option value="Fairytale escape">🦢 Fairytale escape</option><option value="Cottagecore calm">🌿 Cottagecore calm</option><option value="A little mystery">🗝️ A little mystery</option><option value="Dark academia">📜 Dark academia</option></select>
+      <div class="mood-note" id="moodNote">A warm drink, a soft blanket, and nowhere else to be.</div>
+    </div>
+  </div>
+  <div class="cottage-card buddy-card">
+    <div class="buddy-avatar" aria-hidden="true">🐇</div>
+    <div class="buddy-copy"><div class="sub">your tiny reading companion</div><h3>Meet Clover</h3><p id="buddyMessage" aria-live="polite">Hello, bookworm! I've saved you the coziest spot by the window. ♡</p></div>
+    <button class="btn buddy-button" id="buddyNext" type="button">A little note →</button>
+  </div>
+</section>
 <section id="view"><div class="head"><h2 id="heading">Your bookshelf</h2><div class="tools"><input id="search" class="field" placeholder="Find a book…"><select id="genre" class="field"><option value="">All genres</option></select><select id="sort" class="field" aria-label="Sort books"><option value="added">Recently added</option><option value="title">Title A–Z</option><option value="author">Author A–Z</option><option value="rating">Highest rated</option></select></div></div><div id="content" class="books"></div></section>
 <section class="two"><div class="panel"><h3>✧ A little reading reminder</h3><p style="font:17px Georgia,serif;color:#80586a">“Just one more chapter…”</p><span class="muted">Every page is a tiny adventure.</span></div><div class="panel"><h3>✿ Your reading corner</h3><p class="muted" id="summary">Your next favourite book is waiting to be discovered.</p><button class="btn" id="journalJump">Write in my journal →</button></div></section><footer class="footer">made with love, tea & a little bit of magic · your data stays in this browser ♡</footer></main>
 <div class="modal" id="bookModal"><form class="dialog" id="bookForm"><h2 id="bookHeading">Add a little book ♡</h2><input type="hidden" id="id"><div class="formgrid">
@@ -163,7 +213,7 @@ button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-vis
 <div class="modal" id="quoteModal"><form class="dialog" id="quoteForm"><h2>Save a favourite quote ✧</h2><div class="formgrid"><label class="wide">The quote *<textarea class="field" id="quoteText" required></textarea></label><label>Book<input class="field" id="quoteBook"></label><label>Page<input class="field" id="quotePage" type="number"></label></div><div class="end"><button type="button" class="btn" data-close>Cancel</button><button class="btn primary">Save quote</button></div></form></div>
 <div class="modal" id="journalModal"><form class="dialog" id="journalForm"><h2>A page from your journal ♡</h2><div class="formgrid"><label class="wide">Entry title<input class="field" id="journalTitle" placeholder="A thought from today"></label><label class="wide">Your thoughts<textarea class="field" id="journalBody" required placeholder="Dear diary…"></textarea></label></div><div class="end"><button type="button" class="btn" data-close>Cancel</button><button class="btn primary">Save entry</button></div></form></div>
 <script>
-const KEY='soft-girl-library-v1';let db=read(),tab='all';function read(){try{return JSON.parse(localStorage.getItem(KEY))||{books:[],quotes:[],journal:[],goal:12}}catch(e){return{books:[],quotes:[],journal:[],goal:12}}}function save(){localStorage.setItem(KEY,JSON.stringify(db));render()}const el=id=>document.getElementById(id),safe=s=>String(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));function show(id,v){el(id).classList.toggle('show',v!==false)}
+const KEY='soft-girl-library-v1';let db=read(),tab='all';function read(){try{return JSON.parse(localStorage.getItem(KEY))||{books:[],quotes:[],journal:[],goal:12}}catch(e){return{books:[],quotes:[],journal:[],goal:12}}}function save(){localStorage.setItem(KEY,JSON.stringify(db));render();renderCottage()}const el=id=>document.getElementById(id),safe=s=>String(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));function show(id,v){el(id).classList.toggle('show',v!==false)}
 function edit(b){el('bookForm').reset();el('id').value=b?b.id:'';el('bookHeading').textContent=b?'Edit your book ♡':'Add a little book ♡';if(b){el('title').value=b.title;el('author').value=b.author;el('bookGenre').value=b.genre;el('totalPages').value=b.pages;el('status').value=b.status;el('progress').value=b.progress;el('rating').value=b.rating||'';el('coverUrl').value=b.cover;el('review').value=b.review;el('favorite').checked=!!b.favorite}show('bookModal')}
 el('add').onclick=()=>edit(null);el('wallAdd').onclick=()=>edit(null);document.querySelectorAll('[data-close]').forEach(b=>b.onclick=()=>b.closest('.modal').classList.remove('show'));
 el('bookForm').onsubmit=e=>{e.preventDefault();let id=el('id').value,b={id:id||String(Date.now()),title:el('title').value.trim(),author:el('author').value.trim(),genre:el('bookGenre').value.trim(),pages:+el('totalPages').value||0,status:el('status').value,progress:+el('progress').value||0,rating:+el('rating').value||0,cover:el('coverUrl').value.trim(),review:el('review').value.trim(),favorite:el('favorite').checked};if(b.status==='finished'&&b.pages)b.progress=b.pages;let i=db.books.findIndex(x=>x.id===id);if(i<0)db.books.unshift(b);else db.books[i]=b;show('bookModal',false);save()};
@@ -176,5 +226,39 @@ let q=el('search').value.toLowerCase(),g=el('genre').value,sort=el('sort')?.valu
 window.editBook=id=>edit(db.books.find(b=>b.id===id));window.removeBook=id=>{if(confirm('Remove this book from your shelf?')){db.books=db.books.filter(b=>b.id!==id);save()}};window.delQuote=id=>{db.quotes=db.quotes.filter(q=>q.id!==id);save()};window.delJournal=id=>{db.journal=db.journal.filter(j=>j.id!==id);save()};
 el('quoteForm').onsubmit=e=>{e.preventDefault();db.quotes.push({id:String(Date.now()),text:el('quoteText').value,book:el('quoteBook').value,page:el('quotePage').value,date:new Date().toISOString()});show('quoteModal',false);el('quoteForm').reset();save()};el('journalForm').onsubmit=e=>{e.preventDefault();db.journal.push({id:String(Date.now()),title:el('journalTitle').value,text:el('journalBody').value,date:new Date().toISOString()});show('journalModal',false);el('journalForm').reset();save()};
 el('journalJump').onclick=()=>{tab='journal';document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('active',x.dataset.tab===tab));render();let b=document.getElementById('newJournal');if(b)b.click()};
-el('backup').onclick=()=>{let blob=new Blob([JSON.stringify(db,null,2)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='soft-girl-library-backup.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)};el('restore').onclick=()=>el('restoreFile').click();el('restoreFile').onchange=async e=>{const file=e.target.files[0];if(!file)return;try{const data=JSON.parse(await file.text());if(!data||!Array.isArray(data.books)||!Array.isArray(data.quotes)||!Array.isArray(data.journal))throw new Error('That file does not look like a Little Library backup.');if(!confirm('Restore this backup? It will replace the library currently saved in this browser.'))return;db={books:data.books,quotes:data.quotes,journal:data.journal,goal:Math.max(1,Number(data.goal)||12)};save();alert('Your library backup has been restored ♡')}catch(err){alert(err.message||'Could not read that backup file.')}finally{e.target.value=''}};render();
+el('backup').onclick=()=>{let blob=new Blob([JSON.stringify(db,null,2)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='soft-girl-library-backup.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)};el('restore').onclick=()=>el('restoreFile').click();el('restoreFile').onchange=async e=>{const file=e.target.files[0];if(!file)return;try{const data=JSON.parse(await file.text());if(!data||!Array.isArray(data.books)||!Array.isArray(data.quotes)||!Array.isArray(data.journal))throw new Error('That file does not look like a Little Library backup.');if(!confirm('Restore this backup? It will replace the library currently saved in this browser.'))return;db={...data,books:data.books,quotes:data.quotes,journal:data.journal,goal:Math.max(1,Number(data.goal)||12),decor:Array.isArray(data.decor)?data.decor:[],mood:data.mood||'Cozy & comfort'};save();alert('Your library backup has been restored ♡')}catch(err){alert(err.message||'Could not read that backup file.')}finally{e.target.value=''}};
+const moodNotes={
+ 'Cozy & comfort':'A warm drink, a soft blanket, and nowhere else to be.',
+ 'Romantic daydream':'Let the pages carry you somewhere full of roses and possibility.',
+ 'Fairytale escape':'A little magic is waiting between the covers.',
+ 'Cottagecore calm':'Open the window, listen to the birds, and read slowly.',
+ 'A little mystery':'Follow the clues. Every chapter hides a secret.',
+ 'Dark academia':'Rain on the windows, old books, and curious thoughts.'
+};
+const buddyNotes=[
+ ()=>"Hello, bookworm! I've saved you the coziest spot by the window. ♡",
+ ()=>"You've collected "+db.books.length+" little worlds so far. Imagine all the adventures still waiting!",
+ ()=>{const b=db.books.find(x=>x.status==='reading');return b?"How is “"+b.title+"” treating you? I'm ever so curious.":"Shall we choose a new story for your reading nook?";},
+ ()=>"A gentle reminder from Clover: reading slowly is still reading. There is no race. 🌷",
+ ()=>"Today's tiny mission: find one sentence you want to remember forever.",
+ ()=>"I put a daisy beside your favourite book. Just because. 🌼"
+];
+let buddyIndex=Number(db.buddyIndex)||0;
+function renderCottage(){
+ const ornaments=Array.isArray(db.decor)?db.decor:[];
+ document.querySelectorAll('[data-ornament]').forEach(b=>b.setAttribute('aria-pressed',String(ornaments.includes(b.dataset.ornament))));
+ const shelf=el('decoratedShelf');
+ if(shelf)shelf.innerHTML=ornaments.length?ornaments.map(x=>'<span class="shelf-treasure" title="A little shelf decoration">'+safe(x)+'</span>').join(''):'<span class="muted">Your little decorations will appear here.</span>';
+ const mood=el('readingMood');
+ if(mood){mood.value=db.mood||'Cozy & comfort';el('moodNote').textContent=moodNotes[mood.value]||moodNotes['Cozy & comfort']}
+ const msg=el('buddyMessage');if(msg)msg.textContent=buddyNotes[buddyIndex%buddyNotes.length]();
+}
+document.querySelectorAll('[data-ornament]').forEach(b=>b.addEventListener('click',()=>{
+ const item=b.dataset.ornament;db.decor=Array.isArray(db.decor)?db.decor:[];
+ db.decor=db.decor.includes(item)?db.decor.filter(x=>x!==item):[...db.decor,item];
+ localStorage.setItem(KEY,JSON.stringify(db));renderCottage();
+}));
+el('readingMood').onchange=()=>{db.mood=el('readingMood').value;localStorage.setItem(KEY,JSON.stringify(db));renderCottage()};
+el('buddyNext').onclick=()=>{buddyIndex=(buddyIndex+1)%buddyNotes.length;db.buddyIndex=buddyIndex;localStorage.setItem(KEY,JSON.stringify(db));renderCottage()};
+render();renderCottage();
 </script></body></html>
