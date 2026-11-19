@@ -57,6 +57,99 @@ body{background-attachment:fixed;background-position:center;background-size:cove
 .btn,.tab{transition:transform .16s,box-shadow .16s}.btn:hover{transform:translateY(-1px);box-shadow:0 6px 15px #98657b20}
 @media(max-width:760px){.nav.room-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.room.tab{min-height:78px}}
 @media(max-width:520px){.shell{padding:14px 10px 45px}.top{gap:8px;flex-wrap:wrap}.top .actions{width:100%;justify-content:flex-end}.hero{min-height:175px}.hero p{max-width:26ch}.reading-wall{padding:13px;border-width:5px}#view{padding:12px}.tools{width:100%}.tools .field{flex:1;width:100%}.formgrid{grid-template-columns:1fr}.wide{grid-column:auto}}
+
+/* Enchanted Cottage Library — romantic blush meets botanical cottagecore */
+:root{
+  --ink:#594653;--muted:#927e86;--rose:#c97894;--pink:#f5dce4;
+  --cream:#fff9f1;--sage:#829477;--line:#ead9d5;--wood:#b78d69;
+  --shadow:0 14px 36px #79576b18;
+}
+body{
+  background-image:
+    radial-gradient(ellipse at 8% 12%,#f8dce466,transparent 32%),
+    radial-gradient(ellipse at 92% 78%,#dce7d066,transparent 34%),
+    linear-gradient(#30233335,#30233335),url("assets/1.jpg");
+  background-position:center;background-size:cover;background-attachment:fixed;
+}
+.shell{
+  background:linear-gradient(145deg,#fffaf3ed 0%,#fff6f1e8 54%,#f8f4e9ed 100%);
+  box-shadow:0 0 80px #3e2c3622;
+}
+h1{letter-spacing:-1.2px;text-shadow:0 2px 0 #fff8}
+.sub{letter-spacing:2.3px;color:#a17f8c}
+.hero{
+  border:1px solid #e8cbd5;
+  background:
+    radial-gradient(circle at 88% 15%,#fff9 0 2px,transparent 3px),
+    linear-gradient(100deg,#fff8f3f5 0%,#fff5edea 48%,#fff1e67a 100%),
+    url("assets/6.jpg") right center/auto 145% no-repeat,#f6e5df;
+}
+.hero h2{max-width:19ch;line-height:1.16}
+.hero-note{background:#f6e4e8;color:#a76580;border:1px solid #efd1dc}
+.art{filter:drop-shadow(0 7px 9px #8b755044);animation:cottage-float 5s ease-in-out infinite}
+@keyframes cottage-float{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-5px) rotate(2deg)}}
+.explore{
+  border-color:#ead4d5;
+  background:
+    radial-gradient(circle at 95% 8%,#dce7d088 0 2px,transparent 3px),
+    linear-gradient(135deg,#fffaf4f4,#f8eaf0ed),
+    url("assets/5.jpg") center/cover;
+}
+.explore-heading h2{color:#98627a}
+.room.tab{
+  background:linear-gradient(145deg,#fffefa 0%,#fbf0ef 100%);
+  border-color:#ead9d8;
+  box-shadow:0 7px 18px #79576b10;
+}
+.room.tab:nth-child(2n){background:linear-gradient(145deg,#fffefa 0%,#f0f3e9 100%)}
+.room.tab.active{background:linear-gradient(145deg,#f5dce5,#e9efdf);border-color:#d8b2bf}
+.room-icon{box-shadow:inset 0 0 0 1px #fff9}
+.room-arrow{color:#b77e91}
+#view{
+  border-color:#ead8d8;
+  background:linear-gradient(135deg,#fffaf5f2,#f8f1e9ec),url("assets/4.jpg") center/cover;
+}
+#view[data-room="reading"]{background:linear-gradient(#fff8f2e8,#fff8f2e8),url("assets/3.jpg") center/cover}
+#view[data-room="want"]{background:linear-gradient(#fff8f2e8,#fff8f2e8),url("assets/4.jpg") center/cover}
+#view[data-room="finished"]{background:linear-gradient(#fff8f2e8,#fff8f2e8),url("assets/7.jpg") center/cover}
+#view[data-room="favorites"],#view[data-room="quotes"]{background:linear-gradient(#fff8f2e8,#fff8f2e8),url("assets/5.jpg") center/cover}
+#view[data-room="journal"]{background:linear-gradient(#fff8f2e8,#fff8f2e8),url("assets/7.jpg") center/cover}
+.stat,.panel,.book{
+  border-color:#ecdcda;
+  box-shadow:0 9px 24px #79576b12;
+}
+.stat strong{color:#b96f8a}
+.stat:nth-child(even) strong{color:#7e9273}
+.progress{background:#f3e5e4}
+.progress span{background:linear-gradient(90deg,#d887a2,#e7bd91 58%,#94a584)}
+.reading-wall{
+  border:7px solid #d9c3a7;
+  outline:1px solid #f3e6d5;
+  outline-offset:-12px;
+  background:linear-gradient(110deg,#fff8eef2,#f7f0e2e8),url("assets/3.jpg") center/cover;
+}
+.reading-wall h2{color:#8f6275}
+.shelf-row{border-bottom-color:#b58b65;box-shadow:0 9px 10px #5d463326}
+.spine:nth-child(5n+1){background:#c77b91}
+.spine:nth-child(5n+2){background:#71876a}
+.spine:nth-child(5n+3){background:#d6ad72;color:#4c4036}
+.spine:nth-child(5n+4){background:#9a7890}
+.spine:nth-child(5n){background:#718d91}
+.quote,.entry{border-color:#ecd9d5;background-color:#fff8f1}
+.quote blockquote{color:#98627a}
+.entry{background:linear-gradient(135deg,#fff8f2,#f0f3e9)}
+.btn{border-color:#ead7d9;background:#fffaf6;color:#875c70}
+.primary{background:linear-gradient(135deg,#d58aa2,#b96f8b);box-shadow:0 5px 14px #c47b9628}
+.primary:hover{filter:brightness(1.04)}
+.pill,.mini{background:#f6e5e9;color:#a3637c}
+.footer{color:#9b8290}
+button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{
+  outline:3px solid #d68ba5;outline-offset:3px;
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}
+}
+
 </style></head><body><main class="shell">
 <header class="top"><div class="brand"><div class="logo">📖</div><div><h1>soft girl library ♡</h1><div class="sub">your own little reading nook</div></div></div><div class="actions"><button class="btn" id="backup">↗ Backup</button><button class="btn" id="restore">↙ Restore</button><input id="restoreFile" type="file" accept="application/json,.json" hidden><button class="btn primary" id="add">＋ Add a book</button></div></header>
 <section class="hero"><div><div class="sub">✿ step inside · stay awhile</div><h2>Welcome to your little storybook world.</h2><p>Wander through your shelves, find a favourite corner, and let every chapter bloom.</p><div class="hero-note">a cosy place for all the stories you love ♡</div></div><div class="art">🌸📚🪴</div></section>
